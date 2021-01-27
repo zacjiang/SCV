@@ -1,0 +1,1 @@
+python train.py --name scv-things --stage things --validation sintel --output final_outputs/3nov/k8i8/chairs --num_steps 120000 --lr 0.00025 --image_size 400 720 --wdecay 0.0001 --gpus 0 1 --num_k 12 --batch_size 4 --iters 8 --max_search_range 100 --val_freq 10000 --print_freq 100
