@@ -157,7 +157,6 @@ class SparseNet(nn.Module):
                     coords0_sp = coords0_cv.permute(0, 2, 3, 1).repeat(1, 4, 1, 1)[mask]
                     coords1_sp = coords1_sp.permute(0, 2, 3, 1)[mask]
 
-                    # avoid negative coordinates
                     coords1_sp = coords1_sp + search_range
                     coords_sp = torch.cat([batch_ind, coords0_sp, coords1_sp], dim=1)
                     coords_sparse_pyramid.append(coords_sp)
@@ -293,7 +292,6 @@ class SparseNetEighth(nn.Module):
                     coords0_sp = coords0_cv.permute(0, 2, 3, 1).repeat(1, 4, 1, 1)[mask]
                     coords1_sp = coords1_sp.permute(0, 2, 3, 1)[mask]
 
-                    # avoid negative coordinates
                     coords1_sp = coords1_sp + search_range
                     coords_sp = torch.cat([batch_ind, coords0_sp, coords1_sp], dim=1)
                     coords_sparse_pyramid.append(coords_sp)

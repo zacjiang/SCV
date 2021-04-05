@@ -193,7 +193,6 @@ def validate_sintel(model, warm_start=False, iters=6):
             padder = InputPadder(image1.shape)
             image1, image2 = padder.pad(image1, image2)
 
-            # flow_low, flow_pr = model.module(image1, image2, iters=iters, flow_init=flow_prev)
             flow_low, flow_pr = model.module(image1, image2, iters=iters, flow_init=flow_prev, test_mode=True)
             flow = padder.unpad(flow_pr[0]).cpu()
 
@@ -273,7 +272,6 @@ def validate_sintel_sequence(model, warm_start=False, iters=6):
             padder = InputPadder(image1.shape)
             image1, image2 = padder.pad(image1, image2)
 
-            # flow_low, flow_pr = model.module(image1, image2, iters=iters, flow_init=flow_prev)
             flow_low, flow_pr = model.module(image1, image2, iters=iters, flow_init=flow_prev, test_mode=True)
             flow = padder.unpad(flow_pr[0]).cpu()
 
@@ -319,7 +317,6 @@ def validate_kitti(model, iters=6):
         padder = InputPadder(image1.shape, mode='kitti')
         image1, image2 = padder.pad(image1, image2)
 
-        # _, flow_pr = model.module(image1, image2, iters=iters)
         _, flow_pr = model.module(image1, image2, iters=iters, test_mode=True)
         flow = padder.unpad(flow_pr[0]).cpu()
 
@@ -358,7 +355,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     model = torch.nn.DataParallel(SparseNet(args))
-    # model = torch.nn.DataParallel(RAFT(args))
     model.load_state_dict(torch.load(args.model))
 
     model.to(f'cuda:{model.device_ids[0]}')

@@ -47,7 +47,7 @@ By default `datasets.py` will search for the datasets in these locations. You ca
 ## Evaluation
 You can evaluate a trained model using `evaluate.py`
 ```Shell
-python evaluate.py --model=checkpoints/quarter/scv-things.pth --dataset=sintel
+python evaluate.py --model=checkpoints/quarter/scv-chairs.pth --dataset=chairs
 ```
 
 ## Training
@@ -56,4 +56,9 @@ We used the following training schedule in our paper (2 GPUs).
 ./train.sh
 ```
 
+## License
+WTFPL. See [LICENSE](LICENSE) file. 
+
 ## Acknowledgement
+The overall code framework is adapted from [RAFT](https://github.com/princeton-vl/RAFT). We
+thank the authors for the contribution. 

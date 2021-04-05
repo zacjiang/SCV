@@ -47,11 +47,6 @@ if __name__ == "__main__":
     for _ in range(100):
         fmap1 = torch.randn(8, 256, 92, 124).cuda()
         fmap2 = torch.randn(8, 256, 92, 124).cuda()
-        # fmap1.requires_grad = True
-        # fmap2.requires_grad = True
-
-        # corr_me = compute_corr_dense(fmap1, fmap2)
-        # corr_me = compute_sparse_corr_mink(fmap1, fmap2, k=16)
         corr_me = compute_sparse_corr_init(fmap1, fmap2, k=16)
 
     # corr_dense = corr(fmap1, fmap2)

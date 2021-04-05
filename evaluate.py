@@ -7,8 +7,8 @@ import time
 import numpy as np
 import torch
 
-# from sparsenet import SparseNet
-from sparsenet import SparseNetEighth as SparseNet
+from sparsenet import SparseNet
+# from sparsenet import SparseNetEighth
 
 import datasets
 from utils import frame_utils
@@ -171,8 +171,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', help="restore checkpoint")
     parser.add_argument('--dataset', help="dataset for evaluation")
-    parser.add_argument('--iters', type=int, default=6)
-    parser.add_argument('--num_k', type=int, default=32,
+    parser.add_argument('--num_k', type=int, default=8,
                         help='number of hypotheses to compute for knn Faiss')
     parser.add_argument('--mixed_precision', default=True, help='use mixed precision')
 
