@@ -1,4 +1,4 @@
-# SCV 
+# Learning Optical Flow from a Few Matches (SCV)
 This repository contains the source code for our paper:
 
 [Learning Optical Flow from a Few Matches]()<br/>
@@ -14,12 +14,6 @@ conda create --name scv
 conda activate scv
 conda install pytorch=1.6.0 torchvision=0.7.0 cudatoolkit=10.1 matplotlib tensorboard scipy opencv -c pytorch
 pip install faiss-gpu
-```
-
-## Demos
-You can demo a trained model on a sequence of frames
-```Shell
-python demo.py --model=models/raft-things.pth --path=demo-frames
 ```
 
 ## Required Data
@@ -62,3 +56,4 @@ We used the following training schedule in our paper (2 GPUs).
 ./train.sh
 ```
 
+## Acknowledgement
