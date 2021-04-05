@@ -1,9 +1,9 @@
-# Learning Optical Flow from a Few Matches (SCV)
+# Learning Optical Flow from a Few Matches
 This repository contains the source code for our paper:
 
 [Learning Optical Flow from a Few Matches]()<br/>
 CVPR 2021 <br/>
-Shihao Jiang, Yao Lu, Hongdong Li, Richard Hartley<br/>
+**Shihao Jiang**, Yao Lu, Hongdong Li, Richard Hartley<br/>
 
 <img src="scv.png">
 
